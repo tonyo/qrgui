@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->pushButton->setDefault(true);
 }
 
 MainWindow::~MainWindow()
@@ -61,4 +62,9 @@ void MainWindow::on_pushButton_clicked()
     int h = ui->pictureLabel->height();
     Q_ASSERT(w == h);
     ui->pictureLabel->setPixmap(QPixmap::fromImage(myImage).scaled(w, h));
+}
+
+void MainWindow::on_lineEdit_returnPressed()
+{
+    ui->pushButton->animateClick();
 }

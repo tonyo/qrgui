@@ -20,3 +20,6 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 
 unix|win32: LIBS += -lqrencode
+
+OTHER_FILES += \
+    README.md

@@ -1,7 +1,7 @@
 qrgui
 =====
 
-Simple Qt app, that allows generatint QR-codes using 'libqrencode'.
+Simple Qt app, that allows generating QR-codes using 'libqrencode'.
 
 ### INSTALL & USAGE
 
