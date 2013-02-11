@@ -1,18 +1,15 @@
 qrgui
 =====
 
-Simple QT app, that allows generatint QR-codes using 'libqrencode'.
+Simple Qt app, that allows generatint QR-codes using 'libqrencode'.
 
+### INSTALL & USAGE
 
-INSTALL & USAGE
-===
+    qmake
+    make
+    ./qrgui
 
-`qmake`
-`make`
-`./qrgui`
-
-TODO
-===
+### TODO
 
 * Add "password mode"
 
