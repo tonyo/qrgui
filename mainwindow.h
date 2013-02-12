@@ -26,6 +26,7 @@ private:
     Ui::MainWindow *ui;
 
     void initElements();
+    void initShotrcuts();
 };
 
 #endif // MAINWINDOW_H

@@ -73,12 +73,12 @@
      <rect>
       <x>20</x>
       <y>360</y>
-      <width>151</width>
+      <width>201</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Password mode</string>
+     <string>Password mode (Ctrl-P)</string>
     </property>
     <property name="checked">
      <bool>false</bool>

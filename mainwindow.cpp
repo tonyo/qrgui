@@ -2,6 +2,7 @@
 #include <qrencode.h>
 #include <errno.h>
 #include <iostream>
+#include <QShortcut>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -12,12 +13,19 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     initElements();
+    initShotrcuts();
 }
 
 void MainWindow::initElements()
 {
-    //ui->pushButton->setDefault(true);
     ui->passwordBox->setChecked(true);
+}
+
+void MainWindow::initShotrcuts()
+{
+    // add Ctrl-P shortcut
+    QShortcut *activatePassShortcut = new QShortcut(QKeySequence(tr("Ctrl+P")), this);
+    connect(activatePassShortcut, SIGNAL(activated()), ui->passwordBox, SLOT(toggle()));
 }
 
 MainWindow::~MainWindow()
