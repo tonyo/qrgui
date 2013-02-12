@@ -11,5 +11,5 @@ Simple Qt app, that allows generating QR-codes using 'libqrencode'.
 
 ### TODO
 
-* Add "password mode"
+* Add "password mode" shortcut
 

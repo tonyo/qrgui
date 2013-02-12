@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>347</width>
-    <height>382</height>
+    <height>394</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,9 +36,9 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>17</x>
+      <x>20</x>
       <y>330</y>
-      <width>201</width>
+      <width>211</width>
       <height>23</height>
      </rect>
     </property>
@@ -46,9 +46,9 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>237</x>
+      <x>240</x>
       <y>330</y>
-      <width>86</width>
+      <width>80</width>
       <height>24</height>
      </rect>
     </property>
@@ -68,6 +68,22 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QCheckBox" name="passwordBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>360</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Password mode</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -77,7 +93,6 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

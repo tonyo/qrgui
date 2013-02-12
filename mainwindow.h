@@ -20,8 +20,12 @@ private slots:
 
     void on_lineEdit_returnPressed();
 
+    void on_passwordBox_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
+
+    void initElements();
 };
 
 #endif // MAINWINDOW_H

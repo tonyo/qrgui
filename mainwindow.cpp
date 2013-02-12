@@ -11,7 +11,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->pushButton->setDefault(true);
+    initElements();
+}
+
+void MainWindow::initElements()
+{
+    //ui->pushButton->setDefault(true);
+    ui->passwordBox->setChecked(true);
 }
 
 MainWindow::~MainWindow()
@@ -57,7 +63,6 @@ void MainWindow::on_pushButton_clicked()
     QRcode_free(code);
 
     // display QR image
-
     int w = ui->pictureLabel->width();
     int h = ui->pictureLabel->height();
     Q_ASSERT(w == h);
@@ -67,4 +72,10 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_lineEdit_returnPressed()
 {
     ui->pushButton->animateClick();
+}
+
+void MainWindow::on_passwordBox_toggled(bool checked)
+{
+    QLineEdit::EchoMode newEchoMode = checked ? QLineEdit::Password : QLineEdit::Normal;
+    ui->lineEdit->setEchoMode(newEchoMode);
 }
