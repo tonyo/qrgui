@@ -12,6 +12,10 @@ class MainWindow : public QMainWindow
     Q_OBJECT
     
 public:
+    static const int MAX_INPUT_LEN = 300;
+
+
+public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     
@@ -27,6 +31,7 @@ private:
 
     void initElements();
     void initShotrcuts();
+    void showMsgBoxError(const char *str);
 };
 
 #endif // MAINWINDOW_H

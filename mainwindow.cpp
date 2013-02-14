@@ -3,6 +3,7 @@
 #include <errno.h>
 #include <iostream>
 #include <QShortcut>
+#include <QMessageBox>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -16,9 +17,16 @@ MainWindow::MainWindow(QWidget *parent) :
     initShotrcuts();
 }
 
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
 void MainWindow::initElements()
 {
     ui->passwordBox->setChecked(true);
+    ui->lineEdit->setMaxLength(MAX_INPUT_LEN);
 }
 
 void MainWindow::initShotrcuts()
@@ -28,11 +36,13 @@ void MainWindow::initShotrcuts()
     connect(activatePassShortcut, SIGNAL(activated()), ui->passwordBox, SLOT(toggle()));
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
 
+void MainWindow::showMsgBoxError(const char *str)
+{
+    QMessageBox msgBox;
+    msgBox.setText(str);
+    msgBox.exec();
+}
 
 void MainWindow::on_pushButton_clicked()
 {
