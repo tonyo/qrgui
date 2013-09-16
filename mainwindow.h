@@ -3,35 +3,36 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-class MainWindow;
+namespace Ui 
+{
+  class MainWindow;
 }
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
-    
-public:
+  Q_OBJECT
+
+  public:
     static const int MAX_INPUT_LEN = 300;
 
 
-public:
-    explicit MainWindow(QWidget *parent = 0);
+  public:
+    explicit MainWindow(QWidget* parent = 0);
     ~MainWindow();
-    
-private slots:
-    void on_pushButton_clicked();
+
+    private slots:
+      void on_pushButton_clicked();
 
     void on_lineEdit_returnPressed();
 
     void on_passwordBox_toggled(bool checked);
 
-private:
-    Ui::MainWindow *ui;
+  private:
+    Ui::MainWindow* ui;
 
     void initElements();
     void initShotrcuts();
-    void showMsgBoxError(const char *str);
+    void showMsgBoxError(const char* str);
 };
 
 #endif // MAINWINDOW_H

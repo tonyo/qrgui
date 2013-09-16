@@ -8,15 +8,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
+MainWindow::MainWindow(QWidget* parent)
+  : QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     initElements();
     initShotrcuts();
 }
-
 
 MainWindow::~MainWindow()
 {
@@ -32,12 +31,12 @@ void MainWindow::initElements()
 void MainWindow::initShotrcuts()
 {
     // add Ctrl-P shortcut
-    QShortcut *activatePassShortcut = new QShortcut(QKeySequence(tr("Ctrl+P")), this);
+    QShortcut* activatePassShortcut = new QShortcut(QKeySequence(tr("Ctrl+P")), this);
     connect(activatePassShortcut, SIGNAL(activated()), ui->passwordBox, SLOT(toggle()));
 }
 
 
-void MainWindow::showMsgBoxError(const char *str)
+void MainWindow::showMsgBoxError(const char* str)
 {
     QMessageBox msgBox;
     msgBox.setText(str);
@@ -55,9 +54,9 @@ void MainWindow::on_pushButton_clicked()
         textToEncode += " ";
     }
 
-    const char *str = textToEncode.toUtf8().data();
+    const char* str = textToEncode.toUtf8().data();
     const int caseSensitive = 1;
-    QRcode *code = QRcode_encodeString(str, 0, QR_ECLEVEL_H, QR_MODE_8, caseSensitive);
+    QRcode* code = QRcode_encodeString(str, 0, QR_ECLEVEL_H, QR_MODE_8, caseSensitive);
 
     if (code == NULL)
     {
@@ -69,7 +68,7 @@ void MainWindow::on_pushButton_clicked()
     QImage myImage(code->width + 8, code->width + 8, QImage::Format_RGB32);
     myImage.fill(0xffffff);
 
-    unsigned char *p = code->data;
+    unsigned char* p = code->data;
     for (int y = 0; y < code->width; y++)
     {
         for (int x = 0; x < code->width; x++)
