@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QShortcut>
 #include <QMessageBox>
+#include <QDesktopWidget>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -84,6 +85,28 @@ void MainWindow::on_pushButton_clicked()
     int h = ui->pictureLabel->height();
     Q_ASSERT(w == h);
     ui->pictureLabel->setPixmap(QPixmap::fromImage(myImage).scaled(w, h));
+}
+
+void MainWindow::moveCenter()
+{
+  int screenWidth, width;
+  int screenHeight, height;
+  int x, y;
+  QSize windowSize;
+
+  QDesktopWidget* desktop = QApplication::desktop();
+
+  screenWidth = desktop->width();
+  screenHeight = desktop->height();
+
+  windowSize = size(); // size of application window
+  width = windowSize.width();
+  height = windowSize.height();
+
+  x = (screenWidth - width) / 2;
+  y = (screenHeight - height) / 2;
+
+  move(x, y);
 }
 
 void MainWindow::on_lineEdit_returnPressed()

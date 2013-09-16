@@ -15,16 +15,13 @@ class MainWindow : public QMainWindow
   public:
     static const int MAX_INPUT_LEN = 300;
 
-
-  public:
     explicit MainWindow(QWidget* parent = 0);
     ~MainWindow();
+    void moveCenter();
 
-    private slots:
-      void on_pushButton_clicked();
-
+  private slots:
+    void on_pushButton_clicked();
     void on_lineEdit_returnPressed();
-
     void on_passwordBox_toggled(bool checked);
 
   private:
